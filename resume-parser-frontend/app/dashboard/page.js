@@ -1,6 +1,8 @@
 "use client";
 
 import { useState } from "react";
+import axios from "axios" ; // ✅ Add this line
+
 
 export default function Dashboard() {
   const [jobDesc, setJobDesc] = useState("");
@@ -17,16 +19,18 @@ export default function Dashboard() {
     const formData = new FormData();
     formData.append("job_description", jobDesc);
     formData.append("resume", resumeFile);
+    
 
     setLoading(true);
 
-    const res = await fetch("https://resume-parser-app-sphj.onrender.com", {
-      method: "POST",
-      body: formData,
-    });
+ const res = await axios.post(
+  "https://resume-parser-app-sphj.onrender.com/match_resume/",
+  formData,
+  { headers: { "Content-Type": "multipart/form-data" } }
+);
 
-    const data = await res.json();
-    setResult(data);
+setResult(res.data);  // ✅ axios response data
+
     setLoading(false);
   };
 
