@@ -1,0 +1,9 @@
+fastapi
+uvicorn
+python-multipart
+pandas
+nltk
+spacy
+pdfminer.six
+python-Levenshtein
+python-dotenv

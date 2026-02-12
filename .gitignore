@@ -1,0 +1,19 @@
+# Node
+node_modules
+.next
+
+# Python
+venv/
+__pycache__/
+*.pyc
+
+# PDF / temp files
+*.pdf
+resume.txt
+
+# Environment files
+.env
+.env.local
+
+# OS
+.DS_Store
