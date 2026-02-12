@@ -20,7 +20,7 @@ export default function Dashboard() {
 
     setLoading(true);
 
-    const res = await fetch("http://127.0.0.1:8000/match_resume/", {
+    const res = await fetch("https://resume-parser-app-sphj.onrender.com", {
       method: "POST",
       body: formData,
     });
