@@ -15,7 +15,7 @@ export default function Home() {
     formData.append("file", file);
     formData.append("job_description", jobDesc);
 
-    try {
+   /* try {
       const res = await axios.post("http://127.0.0.1:8000/parse-resume/", formData, {
         headers: { "Content-Type": "multipart/form-data" },
       });
@@ -25,7 +25,17 @@ export default function Home() {
       alert("Error connecting to backend. Make sure backend is running!");
     }
   };
-
+*/
+try {
+      const res = await axios.post("https://resume-parser-app-sphj.onrender.com", formData, {
+        headers: { "Content-Type": "multipart/form-data" },
+      });
+      setResult(res.data);
+    } catch (err) {
+      console.error(err);
+      alert("Error connecting to backend. Make sure backend is running!");
+    }
+  };
   return (
     <div className="min-h-screen flex flex-col items-center justify-center bg-blue-100 p-4">
       <h1 className="text-3xl font-bold text-blue-600 mb-6">Resume Parser</h1>
