@@ -24,10 +24,12 @@ export default function Dashboard() {
     setLoading(true);
 
  const res = await axios.post(
-  "https://resume-parser-app-sphj.onrender.com/match_resume/",
+  "http://127.0.0.1:8000/match_resume/",
   formData,
   { headers: { "Content-Type": "multipart/form-data" } }
 );
+
+
 
 setResult(res.data);  // ✅ axios response data
 

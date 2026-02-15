@@ -8,8 +8,8 @@ app = FastAPI()
 # CORS
 app.add_middleware(
     CORSMiddleware,
-    allow_origins=["https://resume-parser-app-beta.vercel.app/"],
-    allow_credentials=True,
+    allow_origins=["*"],  # for testing
+    allow_credentials=False,
     allow_methods=["*"],
     allow_headers=["*"],
 )
